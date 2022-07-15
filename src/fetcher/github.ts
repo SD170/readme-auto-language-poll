@@ -12,11 +12,13 @@ const fetchDetails = async (): Promise<{ languages: languageOutline; topics: top
 
     const languages: languageOutline = {};
     const topics: topicOutline = {};
+    const names:string[] = [];
 
 
     // api call
     const res = await octokit.request("GET /user/repos", {
-        visibility: "public"
+        visibility: "public",
+        per_page:100
     });
 
 
@@ -31,10 +33,14 @@ const fetchDetails = async (): Promise<{ languages: languageOutline; topics: top
                 topics[topic] += 1;
             })
         }
+        if (repo.name) {
+            names.push(repo.name);
+        }
     });
 
     // console.log(languages);
-    // console.log(topics);
+    console.log(names);
+    console.log(names.length);
     return {
         languages,
         topics

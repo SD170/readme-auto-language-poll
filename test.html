@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        svg {
+            cursor: pointer;
+            
+        }
+        
+        #bars rect {
+            
+            animation: fadeInUp 5s ease forwards;
+            animation-delay: calc(var(--order)*100ms);
+            opacity: 0;   
+        }
+
+
+        @keyframes fadeInUp {
+            /* we don't want the elements to appear in the first 10% of the animation as the fadeout(transform: translateY(100%);) is visible */
+            10% {
+                opacity: 0;   
+                transform: translateY(100%);
+            }
+            /* from 30 to 100 we want the actual fadeInUp animation */
+            30%, 100% {
+                opacity: 1;
+                transform: translateY(0%);
+
+            }
+        }
+
+        /* #bar1,
+        #bar2,
+        #bar3,
+        #bar4,
+        #bar5,
+        #bar6,
+        #bar7,
+        #bar8 {
+            transform: translateY(100%);
+        }
+
+        svg:hover #bar1,
+        svg:hover #bar2,
+        svg:hover #bar3,
+        svg:hover #bar4,
+        svg:hover #bar5,
+        svg:hover #bar6,
+        svg:hover #bar7,
+        svg:hover #bar8 {
+            transform: translateY(0%);
+        } */
+    </style>
+</head>
+
+<body>
+
+
+
+    <svg width="215" height="150" viewBox="0 0 215 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="Frame 1">
+            <rect width="215" height="150" fill="white" />
+            <g id="bars">
+                <rect id="bar1" x="10" y="50" width="20" height="100" style="--order: 1" fill="#D9D9D9" />
+                <rect id="bar2" x="35" y="50" width="20" height="100" style="--order: 2" fill="#D9D9D9" />
+                <rect id="bar3" x="60" y="50" width="20" height="100" style="--order: 3" fill="#D9D9D9" />
+                <rect id="bar4" x="85" y="50" width="20" height="100" style="--order: 4" fill="#D9D9D9" />
+                <rect id="bar5" x="110" y="50" width="20" height="100" style="--order: 5" fill="#D9D9D9" />
+                <rect id="bar6" x="135" y="50" width="20" height="100" style="--order: 6" fill="#D9D9D9" />
+                <rect id="bar7" x="160" y="50" width="20" height="100" style="--order: 7" fill="#D9D9D9" />
+                <rect id="bar8" x="185" y="50" width="20" height="100" style="--order: 8" fill="#D9D9D9" />
+            </g>
+        </g>
+    </svg>
+
+
+
+</body>
+
+</html>
