@@ -16,4 +16,5 @@ inputs:
   
 runs:
   using: 'node12'
-  main: 'dist//src/server.js'
+  main: 'dist/src/server.js'
+  
