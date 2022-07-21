@@ -4,7 +4,7 @@ import path from "path";
 import { fetchDetails } from "../fetcher/github";
 import { fetchColors } from "../fetcher/githubColors";
 // const Mustache = require('mustache');
-const LANGUAGE_BAR_DIR = '/../../assets/templates/language-bar.mustache';
+const LANGUAGE_BAR_DIR = '/assets/templates/language-bar.mustache';
 let totalBars = Number(process.env.LANGUAGE_COUNT || 3);
 /**
   * DATA is the object that contains all
@@ -100,7 +100,7 @@ const populateData = async () => {
 const generateLangBar = () => {
     return new Promise<void>((resolve, reject) => {
 
-        fs.readFile(path.join(__dirname + LANGUAGE_BAR_DIR), async (err, langBarTemplate) => {
+        fs.readFile(path.join(process.cwd() + LANGUAGE_BAR_DIR), async (err, langBarTemplate) => {
             if (err) reject(err);
             DATA = await populateData();
             DATA.xaxisW = totalBars * 31;

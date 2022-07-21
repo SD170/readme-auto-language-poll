@@ -3,7 +3,7 @@ import Mustache from "mustache";
 import path from "path";
 import { generateLangBar } from "./languagePoll";
 // const Mustache = require('mustache');
-const MUSTACHE_TEMPLATE_DIR = '/../../assets/templates/markdown.mustache';
+const MUSTACHE_TEMPLATE_DIR = '/assets/templates/markdown.mustache';
 /**
   * DATA is the object that contains all
   * the data to be provided to Mustache
@@ -41,7 +41,10 @@ const DATA: Partial<markdownOutline> = {
 
 const generateReadMe = () => {
     return new Promise<void>((resolve, reject) => {
-        fs.readFile(path.join(__dirname + MUSTACHE_TEMPLATE_DIR), async (err, mustacheTemplate) => {
+        fs.readFile(path.join(process.cwd() + MUSTACHE_TEMPLATE_DIR), async (err, mustacheTemplate) => {
+            // console.log(path.join(__dirname + MUSTACHE_TEMPLATE_DIR),"Sss");
+            // console.log(MUSTACHE_TEMPLATE_DIR,"Sss");
+            // console.log(path.join(process.cwd() + "/assets/templates/markdown.mustache"),"Sss");
             if (err) reject(err);
             // generating md
             const output = Mustache.render(mustacheTemplate.toString(), DATA);

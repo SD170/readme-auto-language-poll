@@ -1,4 +1,5 @@
-require('dotenv').config({ path: __dirname+'/.env' });
+import path from 'path';
+require('dotenv').config({ path: path.join(process.cwd()+'/.env') });
 
 import { fetchDetails } from "./fetcher/github";
 import { fetchColors } from "./fetcher/githubColors";
@@ -6,7 +7,6 @@ import { generateReadMe } from "./generator/markdown";
 
 //load env vars
 // dotenv.config({ path: './.env' });
-
 
 (async () => {
     // const res = await fetchDetails();
