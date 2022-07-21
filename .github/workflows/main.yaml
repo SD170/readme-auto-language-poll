@@ -10,7 +10,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -19,23 +18,23 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build
-    - run: npm test
-    - name: Install dependencies
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+      - name: Install dependencies
         run: npm install
-      # - name: add .env
-      #   run: |
-      #     touch .env
-      #     echo GITHUB_PERSONAL_ACCESS_TOKEN=${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }} >> .env
-      #     echo LANGUAGE_COUNT=${{ secrets.LANGUAGE_COUNT }} >> .env
-      #     echo DECIMAL_PRECISON=${{ secrets.DECIMAL_PRECISON }} >> .env
+        # - name: add .env
+        #   run: |
+        #     touch .env
+        #     echo GITHUB_PERSONAL_ACCESS_TOKEN=${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }} >> .env
+        #     echo LANGUAGE_COUNT=${{ secrets.LANGUAGE_COUNT }} >> .env
+        #     echo DECIMAL_PRECISON=${{ secrets.DECIMAL_PRECISON }} >> .env
       - name: Generate README file and assets by running the script
         run: npm start
       - name: Commit and Push new README.md to the repository
