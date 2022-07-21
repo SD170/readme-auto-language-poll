@@ -43,7 +43,7 @@ const github_1 = require("../fetcher/github");
 const githubColors_1 = require("../fetcher/githubColors");
 // const Mustache = require('mustache');
 const LANGUAGE_BAR_DIR = '/assets/templates/language-bar.mustache';
-let totalBars = Number(process.env.LANGUAGE_COUNT || 3);
+let totalBars = Number(process.env.LANGUAGE_COUNT || 5);
 let DATA = {
 // bars:[]
 };

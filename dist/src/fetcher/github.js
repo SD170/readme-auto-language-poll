@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.fetchDetails = void 0;
 const octokit_1 = require("octokit");
 const octokit = new octokit_1.Octokit({ auth: process.env.GHUB_PERSONAL_ACCESS_TOKEN });
-const decimalPrecision = Number(process.env.DECIMAL_PRECISON || 1);
+const decimalPrecision = Number(process.env.DECIMAL_PRECISION || 1);
 const fetchDetails = () => __awaiter(void 0, void 0, void 0, function* () {
     const languages = {};
     const languagesSorted = [];

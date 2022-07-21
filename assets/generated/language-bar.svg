@@ -1,0 +1,107 @@
+<svg fill="none" viewBox="0 0 155 150" width="155" height="150" xmlns="http://www.w3.org/2000/svg">
+    <foreignObject width="100%" height="100%">
+
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <style>
+                svg {
+                    cursor: pointer;
+
+                }
+
+                #bars rect,
+                circle,
+                #percent {
+
+                    animation: fadeInUp 5s ease forwards;
+                    animation-delay: calc(var(--order)*100ms);
+                    opacity: 0;
+                }
+
+
+                @keyframes fadeInUp {
+
+                    /* we don't want the elements to appear in the first 10% of the animation as the fadeout(transform: translateY(100%);) is visible */
+                    10% {
+                        opacity: 0;
+                        transform: translateY(100%);
+                    }
+
+                    /* from 30 to 100 we want the actual fadeInUp animation */
+                    30%,
+                    100% {
+                        opacity: 1;
+                        transform: translateY(0%);
+
+                    }
+                }
+
+
+            </style>
+
+
+            <svg width="155" height="150" viewBox="0 0 155 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="Frame 1">
+                    <rect width="267" height="150" fill="white" />
+                    <line id="xaxis" x1="0" y1="149.5" x2="155" y2="149.5" stroke="black"
+                        stroke-opacity="0.1" />
+                    <g id="bars">
+                        <g id="bar0" style="--order:0">
+                            <line id="line" x1="11.5" y1="11" x2="11.5" y2="150" stroke="black"
+                                stroke-opacity="0.1" />
+                            <rect id="poll" x="12" y="62.349999999999994" width="20" height="87.65"
+                                fill="#f1e05a" />
+                            <circle id="top" cx="22" cy="62.349999999999994" r="10" fill="#f1e05a" />
+                            <text x="9" y="20" font-family="Verdana, Georgia, serif" font-size="5" fill="black" style="writing-mode: vertical-lr;text-orientation: upright;">JavaScript</text>
+                            <text x="9" y="130" font-family="sans-serif, Georgia, serif" font-size="5" fill="black" style="writing-mode: vertical-lr;">87.65 %</text>
+
+                        </g>
+                        <g id="bar1" style="--order:1">
+                            <line id="line" x1="41.5" y1="11" x2="41.5" y2="150" stroke="black"
+                                stroke-opacity="0.1" />
+                            <rect id="poll" x="42" y="144.14" width="20" height="5.86"
+                                fill="#3572A5" />
+                            <circle id="top" cx="52" cy="144.14" r="10" fill="#3572A5" />
+                            <text x="39" y="20" font-family="Verdana, Georgia, serif" font-size="5" fill="black" style="writing-mode: vertical-lr;text-orientation: upright;">Python</text>
+                            <text x="39" y="130" font-family="sans-serif, Georgia, serif" font-size="5" fill="black" style="writing-mode: vertical-lr;">5.86 %</text>
+
+                        </g>
+                        <g id="bar2" style="--order:2">
+                            <line id="line" x1="71.5" y1="11" x2="71.5" y2="150" stroke="black"
+                                stroke-opacity="0.1" />
+                            <rect id="poll" x="72" y="147.11" width="20" height="2.89"
+                                fill="#563d7c" />
+                            <circle id="top" cx="82" cy="147.11" r="10" fill="#563d7c" />
+                            <text x="69" y="20" font-family="Verdana, Georgia, serif" font-size="5" fill="black" style="writing-mode: vertical-lr;text-orientation: upright;">CSS</text>
+                            <text x="69" y="130" font-family="sans-serif, Georgia, serif" font-size="5" fill="black" style="writing-mode: vertical-lr;">2.89 %</text>
+
+                        </g>
+                        <g id="bar3" style="--order:3">
+                            <line id="line" x1="101.5" y1="11" x2="101.5" y2="150" stroke="black"
+                                stroke-opacity="0.1" />
+                            <rect id="poll" x="102" y="148.63" width="20" height="1.37"
+                                fill="#178600" />
+                            <circle id="top" cx="112" cy="148.63" r="10" fill="#178600" />
+                            <text x="99" y="20" font-family="Verdana, Georgia, serif" font-size="5" fill="black" style="writing-mode: vertical-lr;text-orientation: upright;">C#</text>
+                            <text x="99" y="130" font-family="sans-serif, Georgia, serif" font-size="5" fill="black" style="writing-mode: vertical-lr;">1.37 %</text>
+
+                        </g>
+                        <g id="bar4" style="--order:4">
+                            <line id="line" x1="131.5" y1="11" x2="131.5" y2="150" stroke="black"
+                                stroke-opacity="0.1" />
+                            <rect id="poll" x="132" y="148.95999999999998" width="20" height="1.04"
+                                fill="#e34c26" />
+                            <circle id="top" cx="142" cy="148.95999999999998" r="10" fill="#e34c26" />
+                            <text x="129" y="20" font-family="Verdana, Georgia, serif" font-size="5" fill="black" style="writing-mode: vertical-lr;text-orientation: upright;">HTML</text>
+                            <text x="129" y="130" font-family="sans-serif, Georgia, serif" font-size="5" fill="black" style="writing-mode: vertical-lr;">1.04 %</text>
+
+                        </g>
+                        
+                    </g>
+
+                </g>
+            </svg>
+
+        </div>
+
+    </foreignObject>
+</svg>
