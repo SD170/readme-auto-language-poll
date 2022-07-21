@@ -1,5 +1,5 @@
 import path from 'path';
-require('dotenv').config({ path: path.join(process.cwd()+'/.env') });
+// require('dotenv').config({ path: path.join(process.cwd()+'/.env') });
 
 import { fetchDetails } from "./fetcher/github";
 import { fetchColors } from "./fetcher/githubColors";
