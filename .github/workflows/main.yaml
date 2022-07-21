@@ -36,6 +36,7 @@ jobs:
         #     echo DECIMAL_PRECISION=${{ secrets.DECIMAL_PRECISION }} >> .env
       - name: Generate README file and assets by running the script
         run: npm start
+        uses: ./
       - name: Commit and Push new README.md to the repository
         uses: SD170/readme-auto-language-poll@master
         env:
