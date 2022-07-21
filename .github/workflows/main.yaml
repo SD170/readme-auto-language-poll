@@ -27,13 +27,12 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm run build
-      - run: npm test
       - name: Install dependencies
         run: npm install
         # - name: add .env
         #   run: |
         #     touch .env
-        #     echo GITHUB_PERSONAL_ACCESS_TOKEN=${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }} >> .env
+        #     echo GHUB_PERSONAL_ACCESS_TOKEN=${{ secrets.GHUB_PERSONAL_ACCESS_TOKEN }} >> .env
         #     echo LANGUAGE_COUNT=${{ secrets.LANGUAGE_COUNT }} >> .env
         #     echo DECIMAL_PRECISION=${{ secrets.DECIMAL_PRECISION }} >> .env
       - name: Generate README file and assets by running the script
@@ -41,6 +40,6 @@ jobs:
       - name: Commit and Push new README.md to the repository
         uses: SD170/readme-auto-language-poll@master
         env:
-          GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
+          GHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GHUB_PERSONAL_ACCESS_TOKEN }}
           LANGUAGE_COUNT: ${{ secrets.LANGUAGE_COUNT }}
           DECIMAL_PRECISION: ${{ secrets.DECIMAL_PRECISION }}

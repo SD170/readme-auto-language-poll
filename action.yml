@@ -4,7 +4,7 @@ author: 'SD170'
 
 
 inputs:
-  GITHUB_PERSONAL_ACCESS_TOKEN:
+  GHUB_PERSONAL_ACCESS_TOKEN:
     description: 'github token'
     required: true
   LANGUAGE_COUNT:

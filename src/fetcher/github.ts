@@ -1,7 +1,7 @@
 import { Octokit, App } from "octokit";
 
 
-const octokit = new Octokit({ auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN });
+const octokit = new Octokit({ auth: process.env.GHUB_PERSONAL_ACCESS_TOKEN });
 const decimalPrecision = Number(process.env.DECIMAL_PRECISION || 1);
 
 interface languageOutline {
