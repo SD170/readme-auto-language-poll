@@ -2,7 +2,7 @@ import { Octokit, App } from "octokit";
 
 
 const octokit = new Octokit({ auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN });
-const decimalPrecision = Number(process.env.DECIMAL_PRECISON || 1);
+const decimalPrecision = Number(process.env.DECIMAL_PRECISION || 1);
 
 interface languageOutline {
     [key: string]: number;  // n no of keys with number type value

@@ -17,10 +17,11 @@ jobs:
         node-version: [12.x, 14.x, 16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
+    # [uses: ./] means running the action
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: ./  
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
@@ -34,7 +35,7 @@ jobs:
         #     touch .env
         #     echo GITHUB_PERSONAL_ACCESS_TOKEN=${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }} >> .env
         #     echo LANGUAGE_COUNT=${{ secrets.LANGUAGE_COUNT }} >> .env
-        #     echo DECIMAL_PRECISON=${{ secrets.DECIMAL_PRECISON }} >> .env
+        #     echo DECIMAL_PRECISION=${{ secrets.DECIMAL_PRECISION }} >> .env
       - name: Generate README file and assets by running the script
         run: npm start
       - name: Commit and Push new README.md to the repository
@@ -42,4 +43,4 @@ jobs:
         env:
           GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
           LANGUAGE_COUNT: ${{ secrets.LANGUAGE_COUNT }}
-          DECIMAL_PRECISON: ${{ secrets.DECIMAL_PRECISON }}
+          DECIMAL_PRECISION: ${{ secrets.DECIMAL_PRECISION }}

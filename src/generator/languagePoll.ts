@@ -5,7 +5,7 @@ import { fetchDetails } from "../fetcher/github";
 import { fetchColors } from "../fetcher/githubColors";
 // const Mustache = require('mustache');
 const LANGUAGE_BAR_DIR = '/assets/templates/language-bar.mustache';
-let totalBars = Number(process.env.LANGUAGE_COUNT || 3);
+let totalBars = Number(process.env.LANGUAGE_COUNT || 5);
 /**
   * DATA is the object that contains all
   * the data to be provided to Mustache
