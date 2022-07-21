@@ -1,0 +1,42 @@
+name: auto README
+
+# workflow will trigger every 6 hrs, and on push to master
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 */6 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout current repository to Master branch
+        uses: actions/checkout@v1
+      - name: Setup NodeJs 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+      - name: Cache dependencies and build outputs to improve workflow execution time.
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-js-${{ hashFiles('package-lock.json') }}
+      - name: Install dependencies
+        run: npm install
+      # - name: add .env
+      #   run: |
+      #     touch .env
+      #     echo GITHUB_PERSONAL_ACCESS_TOKEN=${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }} >> .env
+      #     echo LANGUAGE_COUNT=${{ secrets.LANGUAGE_COUNT }} >> .env
+      #     echo DECIMAL_PRECISON=${{ secrets.DECIMAL_PRECISON }} >> .env
+      - name: Generate README file and assets by running the script
+        run: npm start
+      - name: Commit and Push new README.md to the repository
+        uses: SD170/readme-auto-language-poll@master
+        env:
+          GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
+          LANGUAGE_COUNT: ${{ secrets.LANGUAGE_COUNT }}
+          DECIMAL_PRECISON: ${{ secrets.DECIMAL_PRECISON }}
