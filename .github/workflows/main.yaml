@@ -37,3 +37,8 @@ jobs:
           DECIMAL_PRECISION: ${{ secrets.DECIMAL_PRECISION }}
       - name: Commit and Push new README.md to the repository
         uses: SD170/readme-auto-language-poll@master
+        env:
+          CI: true
+          GHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GHUB_PERSONAL_ACCESS_TOKEN }}
+          LANGUAGE_COUNT: ${{ secrets.LANGUAGE_COUNT }}
+          DECIMAL_PRECISION: ${{ secrets.DECIMAL_PRECISION }}
