@@ -31,5 +31,6 @@
   },
   "author": "SD17",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "type": "module"
 }
