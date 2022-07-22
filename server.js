@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const path_1 = __importDefault(require("path"));
-require('dotenv').config({ path: path_1.default.join(process.cwd() + '/.env') });
+require('dotenv').config({ path: '.env' });
 const markdown_1 = require("./dist/src/generator/markdown");
 (() => __awaiter(void 0, void 0, void 0, function* () {
     yield (0, markdown_1.generateReadMe)();
