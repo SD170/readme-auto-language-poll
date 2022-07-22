@@ -16,5 +16,5 @@ inputs:
   
 runs:
   using: 'node12'
-  main: 'dist/src/server.js'
+  main: 'src/server.ts'
   
