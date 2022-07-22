@@ -15,6 +15,6 @@ inputs:
     required: false
   
 runs:
-  using: 'node12'
-  main: '/'
+  using: 'node16'
+  main: '/dist/src/server.js'
   
