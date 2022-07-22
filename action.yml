@@ -16,5 +16,5 @@ inputs:
   
 runs:
   using: 'node16'
-  main: '/server.js'
+  main: 'server.js'
   
